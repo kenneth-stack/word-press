@@ -388,6 +388,6 @@ Site title for the site.
   
 Discourage search engines from indexing this site:
 
-![wp_setup_complete](/images/Screenshot9.jpg)
+![wp](/images/Screenshot9.jpg)
 
 **In this documentation, we've mastered the process of creating and linking EBS volumes to our instance, partitioning and establishing logical volumes to house our WordPress website. Furthermore, we've successfully crafted a WordPress site, stored its files on our Apache web server, and hosted the database on a separate server, allowing us to remotely access it.**
