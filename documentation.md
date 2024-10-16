@@ -264,7 +264,6 @@ Write the following code to chek the php configuration
 ```
 __7.__ Vist your IPaddress/info.php
 
-![](/img/homepage_php.png)
 
 __8.__ Download and Copy wordpress to the /var/www/html directory
 ```bash
@@ -287,9 +286,8 @@ sudo chcon -t httpd_sys_rw_content_t /var/www/html/wordpress -R
 
 sudo setsebool -P httpd_can_network_connect=1
 ```
-![](/img/php_wordpress.jpg)
+![](/images/screenshot.jpg)
 
-![](/img/apache_install.jpg)
 
 __10.__ Install and configure mysql server on your DB ec2 instance
 
@@ -297,7 +295,7 @@ __10.__ Install and configure mysql server on your DB ec2 instance
 sudo yum -y update
 sudo yum install mysql-server
 ```
-![](/img/db_mysql_server.jpg)
+![](/images/Screenshot5.jpg)
 
 __11.__ Verify that the service is up and running
 
@@ -326,7 +324,7 @@ FLUSH PRIVILEGES;
 
 SHOW DATABASES;
 ```
-![](/img/wordpress_created.png)
+![](/images/Screenshot4.jpg)
 
 Test your db connection by logging in to your db from your webserver, before that, ensure you allowed port 3306 (which is the default port for mysql) in your mysql instance inbound rules, configure the connection to your-webserver-IP-address/32
 
@@ -340,15 +338,11 @@ __15.__ Log in to the mysql server remotely from your webserver.
 ```bash
 sudo mysql -u myuser -p -h (your mysql server ip address)
 ```
-__16.__ If logged successfully, you should get the same result below. P.S, the image below shows both my webserver which is on the left and mysql server which is on the right.
+__16.__ If logged successfully, you should get the same result below.
 
-![db_remote_connection](/img/DB_Remotely_connected.png)
+![db_remote_connection](/images/Screenshot6.jpg)
 
 **Now that you have successfully setup and configured mysql and connected to it remotely from your webserver, it is essential we set up wordpress to do the same.**
-
-__17.__  Visit your-ip-address/wordpress in your web browser and you should get the same result as below;
-
-![](/img/wordpress_installed.png)
 
 ## STEP FIVE
 
@@ -375,7 +369,7 @@ sudo vi wp-config.php
 
 - Visit your webserver IP 
   
-![](/img/WP_Install.png)
+![](/images/Screenshot8.jpg)
 ```bash
 address/wordpress directory
 your-ip-address/wordpress
@@ -383,7 +377,7 @@ your-ip-address/wordpress
 
   and you should get the installation page below :
 
-![](/img/connected%20_wordpress%20db.png)
+![](/images/Screenshot7.jpg)
 
 - Follow the installation process and click on install, wait a few minutes and wordpress would have been successfully installed using your remote database on the mysql server
   
@@ -394,7 +388,6 @@ Site title for the site.
   
 Discourage search engines from indexing this site:
 
-![wp_setup_complete
-](/img/WP_Setup_Complete.png)
+![wp_setup_complete](/images/Screenshot9.jpg)
 
 **In this documentation, we've mastered the process of creating and linking EBS volumes to our instance, partitioning and establishing logical volumes to house our WordPress website. Furthermore, we've successfully crafted a WordPress site, stored its files on our Apache web server, and hosted the database on a separate server, allowing us to remotely access it.**
